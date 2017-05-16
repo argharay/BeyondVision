@@ -4,15 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.speechtotext.DisplayWebView">
+    tools:context="com.example.speechtotext.DisplayWebView"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
-    <WebView  xmlns:android="http://schemas.android.com/apk/res/android"
+    <WebView
         android:id="@+id/webview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="8dp" />
+
+    <ImageButton
+        android:id="@+id/btnSave"
+        android:layout_width="368dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/white"
+        android:onClick="saveImage"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@mipmap/ic_save" />
+
 </android.support.constraint.ConstraintLayout>
