@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView voiceInput;
     private ImageButton speakMic;
-    private final int REQ_CODE_SPEECH_INPUT = 10000;
+    private final int REQ_CODE_SPEECH_INPUT = 1000;
     public static final String EXTRA_MESSAGE = "com.example.speechtotext.MESSAGE";
 
     @Override
@@ -79,6 +79,16 @@ public class MainActivity extends AppCompatActivity {
     public void sendMessage(View view) {
         Intent intent = new Intent(this, DisplayWebView.class);
         //intent.putExtra(EXTRA_MESSAGE, "ABCD");
+        startActivity(intent);
+    }
+
+    public void nextPage (View view) {
+
+        Intent intent = new Intent(this, DisplayTextToSpeech.class);
+        TextView editText = (TextView) findViewById(R.id.voiceInput);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        Log.d("Speech To Text","Launching Text to Speech");
         startActivity(intent);
     }
 }
